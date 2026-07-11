@@ -21,8 +21,54 @@ a{display:inline-block;margin:6px 6px 0 0;padding:8px 12px;background:#27445d;co
 <div class="card"><h2>Day4 回程</h2><p>整理行李→伴手禮→返程</p></div>
 </section>
 <section id="traffic" class="page"><div class="card"><h2>交通</h2><ul><li>捷運為主</li><li>Uber輔助</li><li>悠遊卡</li></ul></div></section>
-<section id="hotel" class="page"><div class="card"><h2>住宿</h2><p>已預訂（隱藏）</p></div></section>
-<section id="packing" class="page"><div class="card"><h2>行李</h2><ul><li>悠遊卡</li><li>行動電源</li><li>折疊傘</li><li>防曬</li></ul></div></section>
+<section id="hotel" class="page"><div class="card"><h2>住宿</h2><p>已預訂</p></div></section>
+<section id="packing" class="page">
+  <div class="card">
+    <h2>🎒 行李清單</h2>
+    <p>出發前確認是否已經帶好：</p>
+
+    <div class="checklist">
+      <label>
+        <input type="checkbox" class="pack-checkbox" data-item="easycard">
+        <span>悠遊卡</span>
+      </label>
+
+      <label>
+        <input type="checkbox" class="pack-checkbox" data-item="powerbank">
+        <span>行動電源</span>
+      </label>
+
+      <label>
+        <input type="checkbox" class="pack-checkbox" data-item="umbrella">
+        <span>折疊傘</span>
+      </label>
+
+      <label>
+        <input type="checkbox" class="pack-checkbox" data-item="sunscreen">
+        <span>防曬用品</span>
+      </label>
+
+      <label>
+        <input type="checkbox" class="pack-checkbox" data-item="charger">
+        <span>手機充電器</span>
+      </label>
+
+      <label>
+        <input type="checkbox" class="pack-checkbox" data-item="id">
+        <span>身分證件</span>
+      </label>
+
+      <label>
+        <input type="checkbox" class="pack-checkbox" data-item="cash">
+        <span>現金／信用卡</span>
+      </label>
+    </div>
+
+    <button class="reset-btn" onclick="resetPacking()">
+      清除全部勾選
+    </button>
+  </div>
+</section>
 <section id="budget" class="page"><div class="card"><h2>預算</h2><p>約 NT$3,300–6,200（不含住宿）</p></div></section>
 </main>
 <nav>
