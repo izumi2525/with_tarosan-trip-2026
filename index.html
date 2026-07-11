@@ -1,84 +1,83 @@
-
-<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>台北旅行</title>
-<style>
-body{font-family:Arial,"Noto Sans TC";margin:0;background:#f6f4ef}
-header{background:#27445d;color:#fff;padding:24px;border-radius:0 0 24px 24px}
-main{max-width:760px;margin:auto;padding:16px 16px 90px}
-.card{background:#fff;border-radius:16px;padding:16px;margin:14px 0;box-shadow:0 3px 10px rgba(0,0,0,.08)}
-.page{display:none}.page.active{display:block}
-nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid #ddd}
-nav button{flex:1;padding:14px;border:0;background:#fff}
-a{display:inline-block;margin:6px 6px 0 0;padding:8px 12px;background:#27445d;color:#fff;text-decoration:none;border-radius:8px}
-</style></head><body>
-<header><h1>🌸 台北4天3夜</h1><p>2026/08/10–08/13</p></header>
-<main>
-<section id="trip" class="page active">
-<div class="card"><h2>Day1 西門町</h2><p>入住→西門町→晚餐→夜逛</p><a target="_blank" href="https://maps.google.com/?q=西門町">Google Maps</a></div>
-<div class="card"><h2>Day2 鼎泰豐＋101</h2><p>鼎泰豐→101→信義區→夜景</p><a target="_blank" href="https://maps.google.com/?q=鼎泰豐101店">鼎泰豐</a><a target="_blank" href="https://maps.google.com/?q=台北101">101</a></div>
-<div class="card"><h2>Day3 大稻埕＋寧夏夜市</h2><p>迪化街→大稻埕→寧夏夜市</p><a target="_blank" href="https://maps.google.com/?q=迪化街">迪化街</a><a target="_blank" href="https://maps.google.com/?q=寧夏夜市">寧夏夜市</a></div>
-<div class="card"><h2>Day4 回程</h2><p>整理行李→伴手禮→返程</p></div>
-</section>
-<section id="traffic" class="page"><div class="card"><h2>交通</h2><ul><li>捷運為主</li><li>Uber輔助</li><li>悠遊卡</li></ul></div></section>
-<section id="hotel" class="page"><div class="card"><h2>住宿</h2><p>已預訂</p></div></section>
-<section id="packing" class="page">
-  <div class="card">
-    <h2>🎒 行李清單</h2>
-    <p>出發前確認是否已經帶好：</p>
-
-    <div class="checklist">
-      <label>
-        <input type="checkbox" class="pack-checkbox" data-item="easycard">
-        <span>悠遊卡</span>
-      </label>
-
-      <label>
-        <input type="checkbox" class="pack-checkbox" data-item="powerbank">
-        <span>行動電源</span>
-      </label>
-
-      <label>
-        <input type="checkbox" class="pack-checkbox" data-item="umbrella">
-        <span>折疊傘</span>
-      </label>
-
-      <label>
-        <input type="checkbox" class="pack-checkbox" data-item="sunscreen">
-        <span>防曬用品</span>
-      </label>
-
-      <label>
-        <input type="checkbox" class="pack-checkbox" data-item="charger">
-        <span>手機充電器</span>
-      </label>
-
-      <label>
-        <input type="checkbox" class="pack-checkbox" data-item="id">
-        <span>身分證件</span>
-      </label>
-
-      <label>
-        <input type="checkbox" class="pack-checkbox" data-item="cash">
-        <span>現金／信用卡</span>
-      </label>
-    </div>
-
-    <button class="reset-btn" onclick="resetPacking()">
-      清除全部勾選
-    </button>
-  </div>
-</section>
-<section id="budget" class="page"><div class="card"><h2>預算</h2><p>約 NT$3,300–6,200（不含住宿）</p></div></section>
-</main>
-<nav>
-<button onclick="s('trip')">🗓️</button>
-<button onclick="s('traffic')">🚇</button>
-<button onclick="s('hotel')">🏨</button>
-<button onclick="s('packing')">🎒</button>
-<button onclick="s('budget')">💰</button>
-</nav>
-<script>
-function s(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
-</script>
-</body></html>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#27445d">
+  <title>台北旅行</title>
+  <style>
+    :root{--navy:#27445d;--navy-light:#e7eef2;--cream:#f6f4ef;--white:#fff;--text:#26333d;--muted:#76818a;--line:#e8e8e8;--shadow:0 4px 16px rgba(0,0,0,.08)}
+    *{box-sizing:border-box}
+    body{font-family:Arial,"Noto Sans TC","Microsoft JhengHei",sans-serif;margin:0;background:var(--cream);color:var(--text)}
+    header{background:var(--navy);color:#fff;padding:24px 20px;border-radius:0 0 24px 24px;box-shadow:var(--shadow)}
+    header h1{margin:0 0 6px;font-size:28px} header p{margin:0;opacity:.82}
+    main{max-width:760px;margin:auto;padding:16px 16px 100px}
+    .card{background:var(--white);border-radius:16px;padding:16px;margin:14px 0;box-shadow:var(--shadow)}
+    .card h2{margin-top:0}.page{display:none}.page.active{display:block}
+    .map-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    a.map-button{display:inline-block;padding:9px 12px;background:var(--navy);color:#fff;text-decoration:none;border-radius:9px;font-size:14px}
+    ul{padding-left:22px}
+    .packing-intro{margin-top:-4px;color:var(--muted);font-size:14px}
+    .packing-progress{margin:16px 0 18px}.progress-text{display:flex;justify-content:space-between;margin-bottom:7px;color:var(--muted);font-size:13px}
+    .progress-bar{height:10px;background:#e9edf0;border-radius:999px;overflow:hidden}.progress-fill{width:0;height:100%;background:var(--navy);border-radius:999px;transition:width .25s ease}
+    .checklist{display:flex;flex-direction:column;gap:10px}
+    .check-item{display:flex;align-items:center;gap:12px;padding:13px 14px;background:#faf9f6;border:1px solid #ece9e2;border-radius:12px;cursor:pointer;transition:.2s;user-select:none}
+    .check-item:hover{transform:translateY(-1px);box-shadow:0 4px 10px rgba(0,0,0,.06)}
+    .check-item input{width:21px;height:21px;margin:0;accent-color:var(--navy);flex:0 0 auto}.check-item span{font-size:15px}
+    .check-item:has(input:checked){background:var(--navy-light);border-color:#c7d5de}.check-item input:checked+span{text-decoration:line-through;color:#8a9298}
+    .reset-button{width:100%;margin-top:16px;padding:11px 14px;border:0;border-radius:10px;background:#dce6ec;color:var(--navy);font-weight:700;cursor:pointer}.reset-button:active{transform:scale(.98)}
+    nav{position:fixed;bottom:0;left:0;right:0;z-index:10;display:flex;background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(0,0,0,.07);backdrop-filter:blur(10px)}
+    nav button{flex:1;padding:10px 4px 12px;border:0;background:transparent;color:#7c858b;cursor:pointer;font-size:11px}nav button span{display:block;font-size:21px;margin-bottom:3px}
+    nav button.active{color:var(--navy);font-weight:700;background:#eef3f6}
+    @media(max-width:420px){header h1{font-size:24px}.card{padding:15px}nav button{font-size:10px}}
+  </style>
+</head>
+<body>
+  <header><h1>🌸 台北 4 天 3 夜</h1><p>2026/08/10–08/13｜一人旅行</p></header>
+  <main>
+    <section id="trip" class="page active">
+      <div class="card"><h2>Day 1｜西門町</h2><p>入住 → 西門町 → 晚餐 → 夜逛</p><div class="map-buttons"><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=西門町">📍 Google Maps</a></div></div>
+      <div class="card"><h2>Day 2｜鼎泰豐＋台北 101</h2><p>鼎泰豐 → 台北 101 → 信義區 → 夜景</p><div class="map-buttons"><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=鼎泰豐101店">🥟 鼎泰豐</a><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=台北101">🏙️ 台北 101</a></div></div>
+      <div class="card"><h2>Day 3｜大稻埕＋寧夏夜市</h2><p>迪化街 → 大稻埕碼頭 → 寧夏夜市</p><div class="map-buttons"><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=迪化街">🏮 迪化街</a><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=寧夏夜市">🍢 寧夏夜市</a></div></div>
+      <div class="card"><h2>Day 4｜回程</h2><p>整理行李 → 補買伴手禮 → 返回住宿拿行李 → 返程</p></div>
+    </section>
+    <section id="traffic" class="page"><div class="card"><h2>🚇 交通</h2><ul><li>以台北捷運為主</li><li>步行較遠、下雨或疲累時使用 Uber</li><li>建議準備悠遊卡</li></ul></div></section>
+    <section id="hotel" class="page"><div class="card"><h2>🏨 住宿</h2><p>已預訂</p></div></section>
+    <section id="packing" class="page">
+      <div class="card">
+        <h2>🎒 行李清單</h2><p class="packing-intro">點一下框框即可標記「已帶」。重新整理後，勾選狀態仍會保留。</p>
+        <div class="packing-progress"><div class="progress-text"><span>準備進度</span><span id="packing-count">0 / 10</span></div><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div></div>
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="easycard"><span>悠遊卡</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="powerbank"><span>行動電源</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="charger"><span>手機充電器與充電線</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="umbrella"><span>折疊傘</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="sunscreen"><span>防曬用品</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="id"><span>身分證件.護照</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="cash"><span>現金／信用卡</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="medicine"><span>個人藥品</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="water"><span>水壺</span></label>
+          <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="clothes"><span>換洗衣物</span></label>
+        </div>
+        <button class="reset-button" type="button" onclick="resetPacking()">清除全部勾選</button>
+      </div>
+    </section>
+    <section id="budget" class="page"><div class="card"><h2>💰 預算</h2><p>約 NT$3,300–6,200（不含住宿、往返交通與購物）。</p></div></section>
+  </main>
+  <nav>
+    <button class="nav-button active" onclick="showPage('trip',this)"><span>🗓️</span>行程</button>
+    <button class="nav-button" onclick="showPage('traffic',this)"><span>🚇</span>交通</button>
+    <button class="nav-button" onclick="showPage('hotel',this)"><span>🏨</span>住宿</button>
+    <button class="nav-button" onclick="showPage('packing',this)"><span>🎒</span>行李</button>
+    <button class="nav-button" onclick="showPage('budget',this)"><span>💰</span>預算</button>
+  </nav>
+  <script>
+    function showPage(id,clickedButton){document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.nav-button').forEach(button=>button.classList.remove('active'));clickedButton.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+    const packingBoxes=document.querySelectorAll('.pack-checkbox');
+    function updatePackingProgress(){const total=packingBoxes.length;const checked=document.querySelectorAll('.pack-checkbox:checked').length;const percentage=total===0?0:(checked/total)*100;document.getElementById('packing-count').textContent=checked+' / '+total;document.getElementById('progress-fill').style.width=percentage+'%';}
+    packingBoxes.forEach(box=>{const storageKey='packing-'+box.dataset.item;box.checked=localStorage.getItem(storageKey)==='true';box.addEventListener('change',()=>{localStorage.setItem(storageKey,box.checked);updatePackingProgress();});});
+    function resetPacking(){packingBoxes.forEach(box=>{box.checked=false;localStorage.removeItem('packing-'+box.dataset.item);});updatePackingProgress();}
+    updatePackingProgress();
+  </script>
+</body>
+</html>
