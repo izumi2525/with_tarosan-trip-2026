@@ -1,0 +1,38 @@
+
+<!DOCTYPE html><html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>台北旅行</title>
+<style>
+body{font-family:Arial,"Noto Sans TC";margin:0;background:#f6f4ef}
+header{background:#27445d;color:#fff;padding:24px;border-radius:0 0 24px 24px}
+main{max-width:760px;margin:auto;padding:16px 16px 90px}
+.card{background:#fff;border-radius:16px;padding:16px;margin:14px 0;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+.page{display:none}.page.active{display:block}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#fff;border-top:1px solid #ddd}
+nav button{flex:1;padding:14px;border:0;background:#fff}
+a{display:inline-block;margin:6px 6px 0 0;padding:8px 12px;background:#27445d;color:#fff;text-decoration:none;border-radius:8px}
+</style></head><body>
+<header><h1>🌸 台北4天3夜</h1><p>2026/08/10–08/13</p></header>
+<main>
+<section id="trip" class="page active">
+<div class="card"><h2>Day1 西門町</h2><p>入住→西門町→晚餐→夜逛</p><a target="_blank" href="https://maps.google.com/?q=西門町">Google Maps</a></div>
+<div class="card"><h2>Day2 鼎泰豐＋101</h2><p>鼎泰豐→101→信義區→夜景</p><a target="_blank" href="https://maps.google.com/?q=鼎泰豐101店">鼎泰豐</a><a target="_blank" href="https://maps.google.com/?q=台北101">101</a></div>
+<div class="card"><h2>Day3 大稻埕＋寧夏夜市</h2><p>迪化街→大稻埕→寧夏夜市</p><a target="_blank" href="https://maps.google.com/?q=迪化街">迪化街</a><a target="_blank" href="https://maps.google.com/?q=寧夏夜市">寧夏夜市</a></div>
+<div class="card"><h2>Day4 回程</h2><p>整理行李→伴手禮→返程</p></div>
+</section>
+<section id="traffic" class="page"><div class="card"><h2>交通</h2><ul><li>捷運為主</li><li>Uber輔助</li><li>悠遊卡</li></ul></div></section>
+<section id="hotel" class="page"><div class="card"><h2>住宿</h2><p>已預訂（隱藏）</p></div></section>
+<section id="packing" class="page"><div class="card"><h2>行李</h2><ul><li>悠遊卡</li><li>行動電源</li><li>折疊傘</li><li>防曬</li></ul></div></section>
+<section id="budget" class="page"><div class="card"><h2>預算</h2><p>約 NT$3,300–6,200（不含住宿）</p></div></section>
+</main>
+<nav>
+<button onclick="s('trip')">🗓️</button>
+<button onclick="s('traffic')">🚇</button>
+<button onclick="s('hotel')">🏨</button>
+<button onclick="s('packing')">🎒</button>
+<button onclick="s('budget')">💰</button>
+</nav>
+<script>
+function s(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
+</script>
+</body></html>
