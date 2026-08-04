@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#27445d">
-  <title>台北旅行</title>
+  <title>台北 8/13 一日旅行</title>
   <style>
     :root{--navy:#27445d;--navy-light:#e7eef2;--cream:#f6f4ef;--white:#fff;--text:#26333d;--muted:#76818a;--line:#e8e8e8;--shadow:0 4px 16px rgba(0,0,0,.08)}
     *{box-sizing:border-box}
@@ -18,6 +18,57 @@
     .map-buttons{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
     a.map-button{display:inline-block;padding:9px 12px;background:var(--navy);color:#fff;text-decoration:none;border-radius:9px;font-size:14px}
     ul{padding-left:22px}
+
+
+    /* 8/13 一日行程 */
+    .day-summary{
+      background:linear-gradient(135deg,var(--navy),#44667f);
+      color:#fff;
+    }
+    .day-summary h2{margin-bottom:6px}
+    .day-summary p{margin:0;opacity:.86}
+    .itinerary-card{
+      position:relative;
+      padding-left:92px;
+      min-height:112px;
+    }
+    .time-badge{
+      position:absolute;
+      left:16px;
+      top:16px;
+      width:62px;
+      padding:8px 5px;
+      border-radius:12px;
+      background:var(--navy-light);
+      color:var(--navy);
+      font-size:13px;
+      font-weight:700;
+      text-align:center;
+      line-height:1.35;
+    }
+    .itinerary-card h2{
+      margin:0 0 6px;
+      font-size:19px;
+    }
+    .itinerary-card p{
+      margin:0;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+    .route-overview{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:12px;
+      background:#faf9f6;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.8;
+    }
+    @media(max-width:420px){
+      .itinerary-card{padding-left:82px}
+      .time-badge{width:52px;font-size:12px}
+    }
 
     /* 台北捷運圖 */
     .metro-intro{margin:-4px 0 12px;color:var(--muted);font-size:14px}
@@ -83,23 +134,80 @@
   </style>
 </head>
 <body>
-  <header><h1> \⌯'ᵕ'⌯/ Taipei 4 天 3 夜</h1><p>2026/08/10–08/13｜旅行Travel Chick List</p></header>
+  <header><h1> \⌯'ᵕ'⌯/ Taipei One Day Trip</h1><p>2026/08/13｜旅行 Travel Checklist</p></header>
   <main>
     <section id="trip" class="page active">
-      <div class="card"><h2>Day 1｜西門町</h2><p>入住 → 西門町 → 晚餐 → 夜逛</p><div class="map-buttons"><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=西門町">📍 Google Maps</a></div></div>
-      <div class="card"><h2>Day 2｜鼎泰豐＋台北 101</h2><p>鼎泰豐 → 台北 101 → 信義區 → 夜景</p><div class="map-buttons"><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=鼎泰豐101店">🥟 鼎泰豐</a><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=台北101">🏙️ 台北 101</a></div></div>
-      <div class="card"><h2>Day 3｜大稻埕＋寧夏夜市</h2><p>迪化街 → 大稻埕碼頭 → 寧夏夜市</p><div class="map-buttons"><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=迪化街">🏮 迪化街</a><a class="map-button" target="_blank" rel="noopener" href="https://maps.google.com/?q=寧夏夜市">🍢 寧夏夜市</a></div></div>
-      <div class="card"><h2>Day 4｜回程</h2><p>整理行李 → 補買伴手禮 → 返回住宿拿行李 → 返程</p></div>
+      <div class="card day-summary">
+        <h2>8/13｜台北一日行程</h2>
+        <p>早午餐 → 植物園 → 牛肉麵 → 下午茶 → 寧夏夜市</p>
+      </div>
+
+      <div class="card itinerary-card">
+        <div class="time-badge">08:30<br>見面</div>
+        <h2>🍳 美味堡早午餐</h2>
+        <p>集合後先吃早餐，慢慢開始今天的行程。</p>
+        <div class="map-buttons">
+          <a class="map-button" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/RpK7gJJFMYtojYrw8">📍 開啟地圖</a>
+        </div>
+      </div>
+
+      <div class="card itinerary-card">
+        <div class="time-badge">09:00<br>開始</div>
+        <h2>🌿 台北典藏植物園</h2>
+        <p>散步、看植物與拍照，上午行程以輕鬆步調為主。</p>
+        <div class="map-buttons">
+          <a class="map-button" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/KTmk27C5HyMixYA39?g_st=ic">📍 開啟地圖</a>
+        </div>
+      </div>
+
+      <div class="card itinerary-card">
+        <div class="time-badge">12:00<br>午餐</div>
+        <h2>🍜 牛肉麵</h2>
+        <p>中午一起吃牛肉麵，補充體力後再前往下午的咖啡廳。</p>
+        <div class="map-buttons">
+          <a class="map-button" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/EpuEcKbciWM3KMfC7?g_st=ic">📍 開啟地圖</a>
+        </div>
+      </div>
+
+      <div class="card itinerary-card">
+        <div class="time-badge">13:00<br>17:00</div>
+        <h2>🍰 微蜜 Jolie</h2>
+        <p>下午茶與聊天時間。記得避開咖啡因，現場選擇茶、果汁或其他無咖啡因飲品。</p>
+        <div class="map-buttons">
+          <a class="map-button" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/roh85oaFNsmY622a8?g_st=ic">📍 開啟地圖</a>
+        </div>
+      </div>
+
+      <div class="card itinerary-card">
+        <div class="time-badge">17:00<br>開始</div>
+        <h2>🏮 寧夏夜市</h2>
+        <p>晚餐與夜市散步，作為這次台北一日行程的最後一站。</p>
+        <div class="map-buttons">
+          <a class="map-button" target="_blank" rel="noopener"
+             href="https://maps.app.goo.gl/LEDhKzq6yvHkUQyx5?g_st=ic">📍 開啟地圖</a>
+        </div>
+      </div>
     </section>
 
     <section id="traffic" class="page">
       <div class="card">
         <h2>🚇 交通</h2>
         <ul>
-          <li>以台北捷運為主</li>
+          <li>以台北捷運與步行為主</li>
           <li>步行較遠、下雨或疲累時使用 Uber</li>
           <li>建議準備悠遊卡</li>
         </ul>
+        <div class="route-overview">
+          美味堡早午餐<br>
+          ↓ 台北典藏植物園<br>
+          ↓ 牛肉麵<br>
+          ↓ 微蜜 Jolie<br>
+          ↓ 寧夏夜市
+        </div>
       </div>
 
       <div class="card">
@@ -119,7 +227,7 @@
     <section id="packing" class="page">
       <div class="card">
         <h2>🎒 行李清單</h2><p class="packing-intro">點一下框框即可標記「已帶」。重新整理後，勾選狀態仍會保留。</p>
-        <div class="packing-progress"><div class="progress-text"><span>準備進度</span><span id="packing-count">0 / 10</span></div><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div></div>
+        <div class="packing-progress"><div class="progress-text"><span>準備進度</span><span id="packing-count">0 / 8</span></div><div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div></div>
         <div class="checklist">
           <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="easycard"><span>悠遊卡/EasyCard/悠遊カード</span></label>
           <label class="check-item"><input type="checkbox" class="pack-checkbox" data-item="charger"><span>手機充電器與充電線/phone charger and charging cable/スマホの充電器と充電ケーブル</span></label>
